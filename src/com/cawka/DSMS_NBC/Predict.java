@@ -105,8 +105,8 @@ public class Predict extends AggregationSupport
 		}
 		
 		public Double getValue( ) { return _val; }
-		public void   addValue( Double val ) { _val+=val; _counter++; }
-		public void   removeValue( Double val ) { _val-=val; _counter--; }
+		public void   addValue( Double val )    { if( val!=null ) _val+=val; _counter++; }
+		public void   removeValue( Double val ) { if( val!=null ) _val-=val; _counter--; }
 		
 		public boolean nonZero( ) 
 		{ 
