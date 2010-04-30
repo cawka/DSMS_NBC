@@ -3,6 +3,7 @@ package com.cawka.DSMS_NBC;
 import com.espertech.esper.client.Configuration;
 import com.espertech.esper.client.EPServiceProvider;
 import com.espertech.esper.client.EPServiceProviderManager;
+import com.espertech.esper.client.EPStatement;
 
 public class StreamClassifier 
 {
@@ -38,7 +39,7 @@ public class StreamClassifier
 		}		
 	}
 	
-	public void run( int max_parameters )
+	public EPStatement run( int max_parameters )
 	{
 		EPServiceProvider epService = EPServiceProviderManager.getDefaultProvider( _conf );
 		
@@ -51,7 +52,7 @@ public class StreamClassifier
         	"	GROUP BY id" +
         	"	HAVING predict(n.CLASS,PROB,17) IS NOT NULL"
         	;
-		epService.getEPAdministrator().createEPL( expression );		
+		return epService.getEPAdministrator().createEPL( expression );		
 	}
 }
 

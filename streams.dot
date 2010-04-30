@@ -1,0 +1,31 @@
+digraph list 
+{
+//	rankdir=LR;
+	margin=0;
+	
+	CSVImport -> InputTuple
+
+	InputTuple -> "TrainSet.win:length(1000)" -> "Retrain NBC on Event"
+
+	InputTuple -> verticalTuples
+	InputTuple -> verticalTuples
+	InputTuple -> verticalTuples
+	InputTuple -> verticalTuples
+	InputTuple -> verticalTuples
+	InputTuple -> verticalTuples
+	InputTuple -> verticalTuples
+	InputTuple -> verticalTuples
+	InputTuple -> verticalTuples
+	InputTuple -> verticalTuples
+	InputTuple -> verticalTuples
+
+	
+	verticalTuples -> candidatesJoin
+	NBC -> candidatesJoin
+
+	InputTuple -> checkerJoin
+	candidatesJoin -> checkerJoin
+
+	checkerJoin -> accuracies -> "Event to recalculate NBC" -> "Retrain NBC on Event"
+
+}

@@ -4,9 +4,9 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Esper"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Apache Logging"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Tree"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/CGLib"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ASM"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JDBC"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Tree"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
