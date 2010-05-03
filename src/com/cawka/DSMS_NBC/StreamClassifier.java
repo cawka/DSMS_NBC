@@ -45,7 +45,7 @@ public class StreamClassifier
 		
         String expression = 
         	"INSERT INTO candidates (id,class) "+
-        	"SELECT id,predict(n.CLASS,PROB,17) as class "+
+        	"SELECT id,predict(n.CLASS,PROB,"+Integer.toString(max_parameters)+") as class "+
         	"FROM verticalTuples.win:length("+Integer.toString(max_parameters)+") as i "+
         	"	JOIN sql:db2 ['select CLASS,NUM,VALUE,PROB from NBC'] as n " +
         	"		ON n.NUM=i.num AND n.VALUE=i.value " +
